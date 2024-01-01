@@ -40,4 +40,4 @@ class HTTPRequestHandler(server.SimpleHTTPRequestHandler):
 
 if __name__ == '__main__':
     server.test(HandlerClass=HTTPRequestHandler,port=8080)
-    # port = 8000
+    # default port = 8000
