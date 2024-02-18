@@ -15,6 +15,7 @@ class HTTPRequestHandler(server.SimpleHTTPRequestHandler):
         logging.warning('POST REQUEST')
         content_length = int(self.headers['Content-Length'])
         post_data = self.rfile.read(content_length)
+        result = nn_service.process_image(post_data);
         logging.warning(self.headers)
 
 
