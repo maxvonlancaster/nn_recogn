@@ -2,20 +2,24 @@
 import http.server as server
 import os
 import logging
+import nn_service
 
 class HTTPRequestHandler(server.SimpleHTTPRequestHandler):
 
     def do_GET(self):
+        logging.warning('GET REQUEST')
         server.SimpleHTTPRequestHandler.do_GET(self)
         logging.warning(self.headers)
 
     def do_POST(self):
+        logging.warning('POST REQUEST')
         content_length = int(self.headers['Content-Length'])
         post_data = self.rfile.read(content_length)
         logging.warning(self.headers)
 
 
     def do_PUT(self):
+        logging.warning('PUT REQUEST')
         """Save a file following a HTTP PUT request"""
         filename = os.path.basename(self.path)
 
