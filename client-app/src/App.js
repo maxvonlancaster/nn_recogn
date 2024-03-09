@@ -8,8 +8,10 @@ function App() {
 
   return (
     <div className="App">
-      Hello, world !
-      <div className='components'> 
+      <div className="navbar">
+        Hello, world !
+      </div>
+      <div className="components"> 
         <SidebarImages url={endpoint} />
         <SubmitPicture url={endpoint} />
         <ImageInfo />

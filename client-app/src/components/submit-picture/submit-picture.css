@@ -1,3 +1,19 @@
 .submit_picture{
-    width: 30%;
+    width: 35%;
+}
+
+button{
+    border: transparent;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    padding: 0.55rem .85rem;
+    background-color: #ffcc66;
+}
+
+input{
+    border: transparent;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    padding: 0.55rem .85rem;
+    background-color: #33cc99;
 }

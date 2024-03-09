@@ -20,19 +20,24 @@ const SubmitPicture = props => {
             body: formData,
         });
 
+        console.log(response.body);
     }
 
     return (
         <div className="submit_picture container">
             <form onSubmit={sendData}>
-                <label for="image_uploads">Choose images to upload (PNG, JPG)</label>
-                <br />
-                <input
-                    type="file"
-                    accept=".jpg, .jpeg, .png"
-                    onChange={handleFileChange} />
-                <br />
-                <button type="submit">Submit</button>
+                <p>
+                    <label for="image_uploads">Choose images to upload (PNG, JPG)</label>
+                </p>
+                <p>
+                    <input
+                        type="file"
+                        accept=".jpg, .jpeg, .png"
+                        onChange={handleFileChange} />
+                </p>
+                <p>
+                    <button type="submit">Submit</button>
+                </p>
             </form>
         </div>
     )

@@ -1,21 +1,56 @@
 .App {
   margin: 2rem;
-  text-align: center;
+  text-align: left;
+  font-weight: 400;
+  vertical-align: middle;
+  font-family: Antonio;
+  height: 100%;
 }
+
+body{
+  background-color: white;
+}
+
+/* html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+}
+
+* {
+  box-sizing: border-box;
+} */
+
 
 .components{
   margin-top: 1rem;
   display: flex;
   flex-direction: row;
 	flex-wrap: nowrap;
-	justify-content: space-evenly;
+	justify-content: space-between;
 	align-items: stretch;
 	align-content: stretch;
 }
 
 .container{
   padding: 2rem;
-  margin: 0.5rem;
-  border: solid 1px grey;
-  border-radius: 5px;
+  margin: 1rem;
+  border: solid 1px transparent;
+  border-radius: 0.5rem;
+  background-color: #f5f6fa;
+  
 }
+
+.navbar{
+  padding: 2rem;
+  margin: 1rem 1rem;
+  border: solid 1px transparent;
+  border-radius: 0.5rem;
+  background-color: #ffbbaa;
+}
+
+/* colors: #c1c730,#a71313,#2b53a7,#000000,#d6a444 */

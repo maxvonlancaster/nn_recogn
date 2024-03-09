@@ -3,6 +3,8 @@ import http.server as server
 import os
 import logging
 import nn_service
+import services.image_repository as image_repository
+import services.mongo_repository as mongo_repository
 
 class HTTPRequestHandler(server.SimpleHTTPRequestHandler):
 
@@ -16,7 +18,9 @@ class HTTPRequestHandler(server.SimpleHTTPRequestHandler):
         content_length = int(self.headers['Content-Length'])
         post_data = self.rfile.read(content_length)
         result = nn_service.process_image(post_data);
+        mongo_repository.save_image(post_data, self.rfile.name)
         logging.warning(self.headers)
+        self.send_response(result)
 
 
     def do_PUT(self):
