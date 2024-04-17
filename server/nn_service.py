@@ -16,6 +16,25 @@ import seaborn as sns
 import IPython
 # from six.moves import urllib
 
+from numpy import argmax
+from tensorflow.keras.utils import load_img
+from tensorflow.keras.utils import img_to_array
+from keras.models import load_model
+
+model = tf.keras.models.load_model('final.h5')
+
+cifar10_labels = np.array([
+    'airplane',
+    'automobile',
+    'bird',
+    'cat',
+    'deer',
+    'dog',
+    'frog',
+    'horse',
+    'ship',
+    'truck'])
+
 def preprocessing(imgs): # should work for both a single image and multiple images
     sample_img = imgs if len(imgs.shape) == 2 else imgs[0]
     assert sample_img.shape in [(28, 28, 1), (28, 28)], sample_img.shape # make sure images are 28x28 and single-channel (grayscale)
