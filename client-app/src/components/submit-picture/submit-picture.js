@@ -18,7 +18,9 @@ const SubmitPicture = props => {
         const response = fetch(url, {
             method: 'POST',
             body: formData,
-        });
+        })
+        .then(response => response.json())
+        .then(data => console.log(data));
 
         console.log(response.body);
     }

@@ -12,6 +12,8 @@ class HTTPRequestHandler(server.SimpleHTTPRequestHandler):
         logging.warning('GET REQUEST')
         server.SimpleHTTPRequestHandler.do_GET(self)
         logging.warning(self.headers)
+        result = mongo_repository.get_images()
+        self.send_response(result)
 
     def do_POST(self):
         logging.warning('POST REQUEST')
@@ -44,7 +46,9 @@ class HTTPRequestHandler(server.SimpleHTTPRequestHandler):
         reply_body = 'Saved "%s"\n' % filename
         self.wfile.write(reply_body.encode('utf-8'))
 
-    
+    def end_headers (self):
+        self.send_header('Access-Control-Allow-Origin', '*')
+        server.SimpleHTTPRequestHandler.end_headers(self)
 
 
 if __name__ == '__main__':
